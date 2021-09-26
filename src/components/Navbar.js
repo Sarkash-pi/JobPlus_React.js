@@ -16,13 +16,10 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: '900px',
-    margin: '0 auto',
-    border: '1px yellow dotted'
+    ...theme.container
   }, 
   iconsWrap: {
     marginLeft: 'auto',
-    border: '1px red dotted',
     '& .MuiButtonBase-root': {
       marginLeft: '13px'
     }, 
