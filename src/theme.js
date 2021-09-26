@@ -55,6 +55,9 @@ export default createTheme({
   container: {
     width: '900px',
     margin: '0 auto',
+    [breakpoints.down('sm')]: {
+      width: '100%',
+    }
   }
   
 });
