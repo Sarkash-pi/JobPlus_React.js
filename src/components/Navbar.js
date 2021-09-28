@@ -36,6 +36,17 @@ const useStyles = makeStyles((theme) => ({
   hamburger: {
     fontSize: '35px',
     marginRight: '10px'
+  },
+  logo: {
+    ...theme.fonts.bold,
+    fontSize: '20px'
+  },
+  badge: {
+    backgroundColor: theme.palette.error.main,
+    border: '1px white solid'
+  },
+  indicator: {
+    backgroundColor: theme.palette.common.light,
   }
 }));
  
@@ -54,9 +65,9 @@ const useStyles = makeStyles((theme) => ({
                 <MenuIcon className={classes.hamburger} />
               </IconButton>
             </Hidden>
-            <Typography component="h6">JOBPLUS</Typography>
+            <Typography component="h6" className={classes.logo}>JOBPLUS</Typography>
             <Hidden smDown>
-              <Tabs value={0} className={classes.tabs}>
+              <Tabs value={0} className={classes.tabs} classes={{ indicator: classes.indicator}}>
                 <Tab 
                   key={0}
                   label={'Home'}
@@ -91,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
               </IconButton>
 
               <IconButton size="small" component={Link} to={'/saved-jobs'} color='inherit' edge='start'>
-                <Badge badgeContent={2}>
+                <Badge badgeContent={2} classes={{ badge: classes.badge}}>
                   <StarBorderIcon />
                 </Badge>
               </IconButton>
