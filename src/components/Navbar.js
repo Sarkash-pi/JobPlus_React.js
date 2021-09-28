@@ -1,4 +1,4 @@
-import { AppBar, Badge, Hidden, IconButton, Tab, Tabs, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Badge, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemText, Tab, Tabs, Toolbar, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -7,6 +7,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 
 import React from 'react'
@@ -47,6 +48,14 @@ const useStyles = makeStyles((theme) => ({
   },
   indicator: {
     backgroundColor: theme.palette.common.light,
+  },
+  drawerHeader: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    // Was necessary for the content to be below appbar
+    ...theme.mixins.toolbar,
   }
 }));
  
@@ -54,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
    const classes = useStyles();
    return (
      <Box>
-       <AppBar position="static">
+      <AppBar position="static">
           <Toolbar className={classes.container}>
             <Hidden mdUp>  
               <IconButton
@@ -119,6 +128,37 @@ const useStyles = makeStyles((theme) => ({
 
           </Toolbar>
        </AppBar>
+      
+      <Drawer variant="persistent" anchor="left" open={true}>
+        <div className={classes.drawerHeader}>
+        <IconButton>
+          <ChevronLeftIcon />
+        </IconButton>
+        </div>
+        <Divider />
+        <List>
+          <ListItem key={0} 
+            component={Link} 
+            to={'/'} 
+            selected={true} 
+            button>
+            <ListItemText primary={'Home'} />
+          </ListItem>
+          <ListItem key={1} 
+            component={Link} 
+            to={'/job-listings'} 
+            selected={false} button>
+            <ListItemText primary={'Job Listings'} />
+          </ListItem>
+          <ListItem key={2} 
+            component={Link} 
+            to={'/job-applications'} 
+            selected={false} 
+            button>
+            <ListItemText primary={'Job Applications'} />
+          </ListItem>
+        </List>
+      </Drawer>
      </Box>
    )
  }
