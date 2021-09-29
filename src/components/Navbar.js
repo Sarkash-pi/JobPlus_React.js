@@ -15,6 +15,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/styles';
 
+import { useState, useEffect } from 'react';
+
 const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.container
@@ -59,10 +61,22 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
  
- export default function Navbar() {
-   const classes = useStyles();
-   return (
-     <Box>
+export default function Navbar() {
+  const classes = useStyles();
+
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpenDrawer(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpenDrawer(false)
+  }
+
+
+  return (
+    <Box>
       <AppBar position="static">
           <Toolbar className={classes.container}>
             <Hidden mdUp>  
@@ -70,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
                 edge='start'
                 color='inherit'
                 aria-label='menu'
+                onClick={handleDrawerOpen}
                 >
                 <MenuIcon className={classes.hamburger} />
               </IconButton>
@@ -129,9 +144,9 @@ const useStyles = makeStyles((theme) => ({
           </Toolbar>
        </AppBar>
       
-      <Drawer variant="persistent" anchor="left" open={true}>
+      <Drawer variant="persistent" anchor="left" open={openDrawer}>
         <div className={classes.drawerHeader}>
-        <IconButton>
+        <IconButton onClick={handleDrawerClose}>
           <ChevronLeftIcon />
         </IconButton>
         </div>
@@ -159,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
           </ListItem>
         </List>
       </Drawer>
-     </Box>
-   )
- }
+    </Box>
+  )
+}
  
