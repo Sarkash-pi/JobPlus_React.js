@@ -79,6 +79,15 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '0.9rem'
     },
   },
+  allSectors: {
+    '& .MuiButton-outlinedPrimary': {
+      width: '100%',
+      backgroundColor: theme.palette.common.light,
+      color: theme.palette.common.beta,
+      marginTop: '15px',
+      border: `1px solid ${theme.palette.common.beta}`
+    }
+  },
 }))
 
 export default function Sector() {
@@ -92,6 +101,7 @@ export default function Sector() {
       </div>
 
       <div className={classes.types}>
+
         <div className={classes.wrap}>
           <div className={classes.picture}>
             <img src={'images/tech-big.jpg'} alt={'technology'} />
@@ -107,7 +117,48 @@ export default function Sector() {
             </ul>
           </Hidden>
         </div>
+
+        <div className={classes.wrap}>
+          <div className={classes.picture}>
+            <img src={'images/eng-big.jpg'} alt={'engineering'} />
+          </div>
+
+          <p className={classes.name}>Engineering</p>
+          
+          <Hidden smDown>
+            <ul className={classes.list}>
+              <li><Link to='/'>Accountancy jobs <span>(5,750)</span></Link></li>
+              <li><Link to='/'>Acturial jobs <span>(5,750)</span></Link></li>
+              <li><Link to='/'>Admin, Secretarial jobs <span>(5,750)</span></Link></li>
+            </ul>
+          </Hidden>
+        </div>
+
+        <div className={classes.wrap}>
+          <div className={classes.picture}>
+            <img src={'images/health-big.jpg'} alt={'health'} />
+          </div>
+
+          <p className={classes.name}>Health</p>
+          
+          <Hidden smDown>
+            <ul className={classes.list}>
+              <li><Link to='/'>Accountancy jobs <span>(5,750)</span></Link></li>
+              <li><Link to='/'>Acturial jobs <span>(5,750)</span></Link></li>
+              <li><Link to='/'>Admin, Secretarial jobs <span>(5,750)</span></Link></li>
+            </ul>
+          </Hidden>
+        </div>
+
       </div>
+
+      <Hidden mdUp>
+        <div className={classes.allSectors}>
+          <Button variant="outlined" color="primary">
+            Browse all sectors
+          </Button>
+        </div>
+      </Hidden>
     </div>
   )
 }
