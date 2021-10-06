@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { InputLabel } from '@material-ui/core'
 import clsx from 'clsx';
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function InputLabelCustom(props) {
-  const classes = makeStyles();
+  const classes = useStyles();
   const { label, color } = props;
 
   return (

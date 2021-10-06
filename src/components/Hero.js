@@ -32,6 +32,17 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '2.8rem',
     maxWidth: '42rem',
     marginBottom: '1.3rem',
+  },
+  grid: {
+    [theme.breakpoints.up('md')]: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, auto) 150px',
+      gridGap: '0.5rem',
+    }
+  },
+  button: {
+    display: 'grid',
+    alignItems: 'end',
   }
 }))
 
@@ -56,8 +67,17 @@ export default function Hero(props) {
           <Form>
             <div className={classes.grid}>
               <Controls.FormGroupCustom>
-                <Controls.InputLabelCustom color={labelColor} label="what" />
+                <Controls.InputLabelCustom color={labelColor} label="What" />
                 <Controls.TextFieldCustom placeholder="Job title, skill or company" />
+              </Controls.FormGroupCustom>
+              
+              <Controls.FormGroupCustom>
+                <Controls.InputLabelCustom color={labelColor} label="Where" />
+                <Controls.TextFieldCustom placeholder="Town, city or postcode" />
+              </Controls.FormGroupCustom>
+
+              <Controls.FormGroupCustom className={classes.button}>
+                <Controls.ButtonCustom text="Search" />
               </Controls.FormGroupCustom>
             </div>
           </Form>
