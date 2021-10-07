@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 import { Hidden } from '@material-ui/core'
+import Filter from './Filter'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,8 +29,8 @@ export default function ListingFilter() {
     <div className={classes.root}>
       <div className={classes.lblock}>
         <Hidden smDown>
-          <p>Filter 1</p>
-          <p>Filter 2</p>
+          <Filter />
+          <Filter />
         </Hidden>
       </div>
       <div className={classes.rblock}>
