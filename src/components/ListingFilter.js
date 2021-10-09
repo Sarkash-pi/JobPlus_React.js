@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'grid',
     gridTemplateColumns: 'min-content 1fr',
-    gridGap: '1.2rem',
+    gridGap: '0.3rem',
     ...theme.container,
     marginTop: '1.5rem',
   },

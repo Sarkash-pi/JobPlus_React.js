@@ -11,6 +11,7 @@ import TimerIcon from '@material-ui/icons/Timer';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'grid',
     border: `1px solid ${theme.palette.common.beta}`,
     backgroundColor: theme.palette.common.light,
     padding: '15px',

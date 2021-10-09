@@ -137,7 +137,7 @@ export default function Navbar() {
                 <SearchIcon />
               </IconButton>
 
-              <IconButton size="small" component={Link} to={'/notfications'} color='inherit' edge='start'>
+              <IconButton size="small" component={Link} to={'/notifications'} color='inherit' edge='start'>
                 <Badge color="error" overlap="circular" variant="dot">
                   <NotificationsNoneIcon />
                 </Badge>
