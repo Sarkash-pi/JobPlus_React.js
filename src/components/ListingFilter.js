@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ListingFilter() {
-
+export default function ListingFilter(props) {
   const classes = useStyles();
+  const { components } = props;
 
   return (
     <div className={classes.root}>
@@ -36,8 +36,9 @@ export default function ListingFilter() {
         </Hidden>
       </div>
       <div className={classes.rblock}>
-        <Listing />
-        <Listing />
+        {components.map((comp) => (
+          comp
+        ))}
       </div>
     </div>
   )

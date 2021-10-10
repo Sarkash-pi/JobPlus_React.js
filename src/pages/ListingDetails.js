@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Hero from '../components/Hero';
-import Listing from '../components/Listing';
 import ListingFilter from '../components/ListingFilter';
+import Listing from '../components/Listing';
 
-export default function JobListings(props) {
-  const listings = [<Listing />]
-  
+export default function ListingDetails() {
+  const listings = [<Listing detailed = {true}/>]
   return (
     <>
       <Hero heroType='plain' />
@@ -13,4 +12,3 @@ export default function JobListings(props) {
     </>
   )
 }
-
