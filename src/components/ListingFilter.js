@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   rblock: {
     gridRow: '1 / 2',
     gridColumn: '2 / 3',
+    
   },
 }));
 
