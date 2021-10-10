@@ -144,7 +144,7 @@ export default function Navbar() {
               </IconButton>
 
               <IconButton size="small" component={Link} to={'/saved-jobs'} color='inherit' edge='start'>
-                <Badge badgeContent={2} classes={{ badge: classes.badge}}>
+                <Badge badgeContent={2} classes={{ badge: classes.badge }}>
                   <StarBorderIcon />
                 </Badge>
               </IconButton>

@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme) => ({
       '&:last-child': {
         marginBottom: '0px',
       }
+    },
+    '& .Footer': {
+      fontSize: '15px',
+      textAlign: 'center',
+      margin: '0',
     }
   }
 }))
