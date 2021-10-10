@@ -26,13 +26,25 @@ const useStyles = makeStyles((theme) => ({
 export default function ListingFilter(props) {
   const classes = useStyles();
   const { components } = props;
+  
+  const sectors = [
+    { link: '/', name: 'Technology', count: 14 },
+    { link: '/', name: 'Engineering', count: 200 },
+    { link: '/', name: 'Health', count: 50 },
+  ];
+
+  const locations = [
+    { link: '/', name: 'Job in London', count: 250 },
+    { link: '/', name: 'Job in West Midlands', count: 564 },
+    { link: '/', name: 'Job in Newcastle', count: 54 },
+  ]; 
 
   return (
     <div className={classes.root}>
       <div className={classes.lblock}>
         <Hidden smDown>
-          <Filter />
-          <Filter />
+          <Filter title="Browse by sector" items={sectors}/>
+          <Filter title="Browse by location" items={locations}/>
         </Hidden>
       </div>
       <div className={classes.rblock}>
