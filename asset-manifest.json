@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/JobPlus_React.js/static/css/main.364ae0c6.chunk.css",
+    "main.js": "/JobPlus_React.js/static/js/main.94e26211.chunk.js",
+    "main.js.map": "/JobPlus_React.js/static/js/main.94e26211.chunk.js.map",
+    "runtime-main.js": "/JobPlus_React.js/static/js/runtime-main.c8a5da2c.js",
+    "runtime-main.js.map": "/JobPlus_React.js/static/js/runtime-main.c8a5da2c.js.map",
+    "static/js/2.55392792.chunk.js": "/JobPlus_React.js/static/js/2.55392792.chunk.js",
+    "static/js/2.55392792.chunk.js.map": "/JobPlus_React.js/static/js/2.55392792.chunk.js.map",
+    "static/js/3.bce1d702.chunk.js": "/JobPlus_React.js/static/js/3.bce1d702.chunk.js",
+    "static/js/3.bce1d702.chunk.js.map": "/JobPlus_React.js/static/js/3.bce1d702.chunk.js.map",
+    "index.html": "/JobPlus_React.js/index.html",
+    "static/css/main.364ae0c6.chunk.css.map": "/JobPlus_React.js/static/css/main.364ae0c6.chunk.css.map",
+    "static/js/2.55392792.chunk.js.LICENSE.txt": "/JobPlus_React.js/static/js/2.55392792.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/JobPlus_React.js/static/media/OpenSans-Regular.1b0809d5.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c8a5da2c.js",
+    "static/js/2.55392792.chunk.js",
+    "static/css/main.364ae0c6.chunk.css",
+    "static/js/main.94e26211.chunk.js"
+  ]
+}
