@@ -15,10 +15,11 @@ import Register from './pages/Register';
 import ListingDetails from './pages/ListingDetails';
 
 
+
 function App() {
   let history = useHistory();
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navbar />
       <Switch>
         <Route exact path='/' render={props => <Home {...props} />} />
