@@ -7,18 +7,18 @@ const useStyles = makeStyles((theme) => ({
     height: '33px'
   },
 }))
-
-export default function (props) {
+// eslint-disable-next-line
+export default function(props) {
+  
   const classes = useStyles();
   const { value } = props;
-
   return (
     <FormControlLabel
-    value={value}
-    control={<Checkbox color="primary" />}
-    label={value}
-    labelPlacement="end"
-    classes={{ root: classes.root }}
+      value={value}
+      control={<Checkbox color="primary" />}
+      label={value}
+      labelPlacement="end"
+      classes={{ root: classes.root }}
     />
-  )
-}
+  );
+};

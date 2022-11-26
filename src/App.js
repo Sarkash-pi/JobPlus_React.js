@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Cookie from './components/Cookie';
@@ -17,7 +17,6 @@ import ListingDetails from './pages/ListingDetails';
 
 
 function App() {
-  let history = useHistory();
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navbar />

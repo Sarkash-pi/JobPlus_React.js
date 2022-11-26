@@ -87,16 +87,19 @@ export default function Navbar() {
   ]
   // it takes care of setting active li nk when refreshed
   useEffect(() => {
-    routes.forEach(route => {
-      switch (window.location.pathname) {
-        case `${route.link}`:
-          setTabIndex(route.index);
-          break;
-        default:
-          return false;
-      }
-    })
-  }, [window.location.pathname])
+      routes.forEach(route => {
+        switch (window.location.pathname) {
+          case `${route.link}`:
+            setTabIndex(route.index);
+            break;
+          default:
+            return false;
+        }
+      })
+    }, 
+    // eslint-disable-next-line
+    [window.location.pathname]
+  )
 
   return (
     <Box>

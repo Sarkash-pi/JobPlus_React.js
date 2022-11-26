@@ -2,7 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 import { Typography } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { Link } from 'react-router-dom';
 
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
