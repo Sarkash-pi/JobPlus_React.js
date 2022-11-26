@@ -20,19 +20,19 @@ import { useState, useEffect } from 'react';
 const useStyles = makeStyles((theme) => ({
   container: {
     ...theme.container
-  }, 
+  },
   iconsWrap: {
     marginLeft: 'auto',
     '& .MuiButtonBase-root': {
       marginLeft: '13px'
-    }, 
+    },
     '& .MuiSvgIcon-root': {
       fontSize: '25px'
     }
   },
   tabs: {
     '& .MuiTab-root': {
-      minWidth: 10, 
+      minWidth: 10,
       marginLeft: '10px'
     }
   },
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   }
 }));
- 
+
 export default function Navbar() {
   const classes = useStyles();
 
@@ -81,11 +81,11 @@ export default function Navbar() {
   }
 
   const routes = [
-    {name: 'Home', link: '/', index: 0},
-    {name: 'Job Listings', link: '/job-listings', index: 1},
-    {name: 'Job Applications', link: '/job-applications', index: 2},
+    { name: 'Home', link: '/', index: 0 },
+    { name: 'Job Listings', link: '/job-listings', index: 1 },
+    { name: 'Job Applications', link: '/job-applications', index: 2 },
   ]
-// it takes care of setting active link when refreshed
+  // it takes care of setting active li nk when refreshed
   useEffect(() => {
     routes.forEach(route => {
       switch (window.location.pathname) {
@@ -101,77 +101,77 @@ export default function Navbar() {
   return (
     <Box>
       <AppBar position="static">
-          <Toolbar className={classes.container}>
-            <Hidden mdUp>  
-              <IconButton
-                edge='start'
-                color='inherit'
-                aria-label='menu'
-                onClick={handleDrawerOpen}
-                >
-                <MenuIcon className={classes.hamburger} />
-              </IconButton>
-            </Hidden>
-            <Typography component="h6" className={classes.logo}>JOBPLUS</Typography>
-            <Hidden smDown>
-              <Tabs 
-              value={tabIndex} 
-              className={classes.tabs} 
-              classes={{ indicator: classes.indicator}}
-              onChange = {handleTabIndexChange}
-              >
-                {routes.map((route, index) => (
-                  <Tab 
+        <Toolbar className={classes.container}>
+          <Hidden mdUp>
+            <IconButton
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              onClick={handleDrawerOpen}
+            >
+              <MenuIcon className={classes.hamburger} />
+            </IconButton>
+          </Hidden>
+          <Typography component="h6" className={classes.logo}>JOBPLUS</Typography>
+          <Hidden smDown>
+            <Tabs
+              value={tabIndex}
+              className={classes.tabs}
+              classes={{ indicator: classes.indicator }}
+              onChange={handleTabIndexChange}
+            >
+              {routes.map((route, index) => (
+                <Tab
                   key={`${route}${index}`}
                   label={route.name}
                   component={Link}
                   to={route.link}
                 />
-                ))}
-                
+              ))}
 
-              </Tabs>
-            </Hidden>
-            <Box className={classes.iconsWrap}>
-              <IconButton size="small" component={Link} to={'/search'} color='inherit' edge='start'>
-                <SearchIcon />
-              </IconButton>
 
-              <IconButton size="small" component={Link} to={'/notifications'} color='inherit' edge='start'>
-                <Badge color="error" overlap="circular" variant="dot">
-                  <NotificationsNoneIcon />
-                </Badge>
-              </IconButton>
+            </Tabs>
+          </Hidden>
+          <Box className={classes.iconsWrap}>
+            <IconButton size="small" component={Link} to={'/search'} color='inherit' edge='start'>
+              <SearchIcon />
+            </IconButton>
 
-              <IconButton size="small" component={Link} to={'/saved-jobs'} color='inherit' edge='start'>
-                <Badge badgeContent={2} classes={{ badge: classes.badge }}>
-                  <StarBorderIcon />
-                </Badge>
-              </IconButton>
+            <IconButton size="small" component={Link} to={'/notifications'} color='inherit' edge='start'>
+              <Badge color="error" overlap="circular" variant="dot">
+                <NotificationsNoneIcon />
+              </Badge>
+            </IconButton>
 
-              <IconButton size="small" component={Link} to={'/profile'} color='inherit' edge='start'>
-                <PersonOutlineIcon />
-              </IconButton>
+            <IconButton size="small" component={Link} to={'/saved-jobs'} color='inherit' edge='start'>
+              <Badge badgeContent={2} classes={{ badge: classes.badge }}>
+                <StarBorderIcon />
+              </Badge>
+            </IconButton>
 
-              <IconButton size="small" component={Link} to={'/login'} color='inherit' edge='start'>
-                <ExitToAppIcon />
-              </IconButton>
+            <IconButton size="small" component={Link} to={'/profile'} color='inherit' edge='start'>
+              <PersonOutlineIcon />
+            </IconButton>
 
-            </Box>
+            <IconButton size="small" component={Link} to={'/login'} color='inherit' edge='start'>
+              <ExitToAppIcon />
+            </IconButton>
 
-          </Toolbar>
-       </AppBar>
-      
+          </Box>
+
+        </Toolbar>
+      </AppBar>
+
       <Drawer variant="persistent" anchor="left" open={openDrawer}>
         <div className={classes.drawerHeader}>
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftIcon />
-        </IconButton>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
         </div>
         <Divider />
         <List>
           {routes.map((route, index) => (
-              <ListItem 
+            <ListItem
               key={`${route}${index}`}
               component={Link}
               to={route.link}
@@ -181,10 +181,9 @@ export default function Navbar() {
               <ListItemText primary={route.name} />
             </ListItem>
           ))}
-                    
+
         </List>
       </Drawer>
     </Box>
   )
 }
- 

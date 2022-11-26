@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '1.5rem 0',
   },
   bgWithImage: {
-    backgroundImage: 'url(/images/hero-small.png)',
+    backgroundImage: 'url(images/hero-small.png)',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     width: '100%',
-    boxShadow: '0 3000px rgba(0,0,0, 0.5) inset'
+    boxShadow: '0 3000px rgba(0,0,0, 0) inset'
   },
 
   bgPlain: {
